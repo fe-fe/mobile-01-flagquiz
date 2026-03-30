@@ -1,6 +1,10 @@
 package br.ufpr.flagquiz
 
-data class Pais(val nome: String, val imagem: Int) {
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+data class Pais(val nome: String, val imagem: Int): Parcelable {
     companion object {
         private val paises = listOf(
             Pais("Brazil", R.drawable.br),
@@ -15,4 +19,5 @@ data class Pais(val nome: String, val imagem: Int) {
             return paises_embaralhados.take(limite)
         }
     }
+    // gerado automaticamente
 }
