@@ -12,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlagQuiz">
         <activity
-            android:name=".MainActivity"
+            android:name=".QuizActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StartActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

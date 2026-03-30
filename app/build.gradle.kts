@@ -1,19 +1,16 @@
 plugins {
-    alias(libs.plugins.android.application)
+    id("org.jetbrains.kotlin.android")
+    id("com.android.application")
+    id("kotlin-parcelize")
 }
-
 android {
     namespace = "br.ufpr.flagquiz"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "br.ufpr.flagquiz"
-        minSdk = 29
-        targetSdk = 36
+        minSdk = 28
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -32,6 +29,9 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = "11"
     }
 }
 
