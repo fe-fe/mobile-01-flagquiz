@@ -1,9 +1,11 @@
-package br.ufpr.flagquiz;
+package br.ufpr.flagquiz
 
-import kotlinx.parcelize.Parcelize;
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
-public class Usuario {
-    private String nome;
-    private Integer pontuacao;
+data class Usuario(val nome: String, val pontuacao: Int) : Parcelable {
+    companion object {
+        val listaUsuarios = mutableListOf<Usuario>()
+    }
 }

@@ -24,7 +24,7 @@ data class Pais(val nome: String, val imagem: Int): Parcelable {
             Pais("Suíça", R.drawable.ch),
             Pais("França", R.drawable.fr),
             Pais("Gana", R.drawable.gh),
-            Pais("Inglaterra", R.drawable.gb),
+            Pais("Reino Unido", R.drawable.gb),
             Pais("Japão", R.drawable.jp),
             Pais("Botsuana", R.drawable.bw),
         )

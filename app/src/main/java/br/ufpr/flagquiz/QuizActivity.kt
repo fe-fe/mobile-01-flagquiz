@@ -1,5 +1,6 @@
 package br.ufpr.flagquiz
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
@@ -14,6 +15,7 @@ class QuizActivity : AppCompatActivity() {
     private val paises = Pais.sortear(5)
     private var indiceAtual = 0
     private var pontuacao = 0
+    private var nomeUsuario: String = ""
     private lateinit var perguntaText: TextView
     private lateinit var flagImage: ImageView
     private lateinit var flagName: TextView
@@ -29,6 +31,9 @@ class QuizActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        
+        nomeUsuario = intent.getStringExtra("nome") ?: "Anônimo"
+        
         perguntaText = findViewById(R.id.PerguntasTextView)
         flagImage = findViewById(R.id.FlagQuizView)
         flagName = findViewById(R.id.NomeTextView)
@@ -75,11 +80,11 @@ class QuizActivity : AppCompatActivity() {
         if (indiceAtual < paises.size) {
             mostrarPergunta()
         } else {
-            Toast.makeText(
-                this,
-                "Fim do quiz! Pontuação: $pontuacao",
-                Toast.LENGTH_LONG
-            ).show()
+            Usuario.listaUsuarios.add(Usuario(nomeUsuario, pontuacao))
+            
+            val intent = Intent(this, ResultTableActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }
