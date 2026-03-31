@@ -14,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat
 
 class StartActivity : AppCompatActivity() {
 
-    private val paises = Pais.embaralhar()
+    private val paises = Pais.sortear()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
