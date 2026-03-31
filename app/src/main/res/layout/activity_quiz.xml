@@ -11,7 +11,7 @@
         android:id="@+id/GuessInputTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="352dp"
+        android:layout_marginBottom="332dp"
         android:ems="10"
         android:hint="qual o nome desse país?"
         android:inputType="text"
